@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Simple TODO</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root {
+        --text-direction: center;
+      }
+      body {
+        background: #000000;
+        color: #ffffff;
+      }
+      .center {
+        text-align: center;
+        align-content: center;
+      }
+      #start {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+      }
+      #main {
+        display: grid;
+        grid-template:
+          "header header"
+          "list form";
+      }
+      #list {
+        grid-area: "list";
+      }
+      #form {
+        grid-area: "form";
+      }
+      #header {
+        grid-area: "header";
+      }
+    </style>
+  </head>
+  <body>
+    <div id="start" class="center">
+      <h1>Welcome to Simple <code>TODO:</code></h1>
+      <p>
+        This is a simple TODO site for when you need to write something and be
+        reminded latter
+      </p>
+    </div>
+    <div id="main" class="center">
+      <div id="list">List</div>
+      <div id="form">Add new <code>TODO:</code></div>
+    </div>
+    <script async defer></script>
+  </body>
+</html>
