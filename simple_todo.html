@@ -26,17 +26,19 @@
       #main {
         display: grid;
         grid-template:
-          "header header"
-          "list form";
+          "header"
+          "list";
       }
-      #list {
+      #listContainer {
         grid-area: "list";
-      }
-      #form {
-        grid-area: "form";
       }
       #header {
         grid-area: "header";
+      }
+      ul {
+        text-align: start;
+        padding-left: 2.5rem;
+        list-style-type: none;
       }
     </style>
   </head>
@@ -47,11 +49,38 @@
         This is a simple TODO site for when you need to write something and be
         reminded latter
       </p>
+      <p>
+        Be aware that security was not on mind when developing this. I can't be
+        held liable of any topic related to the information input by the user.
+        The user alone is responsible for the information it has inputed.
+      </p>
     </div>
     <div id="main" class="center">
-      <div id="list">List</div>
-      <div id="form">Add new <code>TODO:</code></div>
+      <div id="listContainer">
+        <h1><code>TODO:</code></h1>
+        <ul id="list">
+          <li><input type="checkbox" />something</li>
+        </ul>
+      </div>
     </div>
-    <script async defer></script>
+    <script defer>
+      "use strict";
+      window.onload = function init() {
+        const listElement = document.getElementById("list");
+
+        listElement.append(li);
+      };
+      let $list = document.getElementById("list");
+      function createTODOListElement(todo) {
+        if (todo) {
+          const li = document.createElement("li");
+          const check = document.createElement("input");
+          check.type = "checkbox";
+          li.append(check);
+          const text = document.createTextNode("Created from init");
+          li.append(text);
+        }
+      }
+    </script>
   </body>
 </html>
