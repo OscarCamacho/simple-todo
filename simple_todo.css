@@ -1,0 +1,58 @@
+:root {
+  --text-direction: center;
+}
+body {
+  background: #000000;
+  color: #ffffff;
+}
+.center {
+  text-align: center;
+  align-content: center;
+}
+#start {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+}
+#main {
+  display: grid;
+  grid-template:
+    "header"
+    "list";
+  padding: 0.5rem;
+}
+#listContainer {
+  grid-area: "list";
+}
+#header {
+  grid-area: "header";
+}
+ul {
+  text-align: start;
+  list-style-type: none;
+}
+li:focus-within {
+  font-size: 1.3rem;
+  transform: translate(0.5rem, 0.5rem);
+  transition: transform 200ms ease;
+  padding-bottom: 1rem;
+}
+.done input {
+  text-decoration: line-through !important;
+  color: #7a7a7aa1 !important ;
+}
+input[type="text"] {
+  border: none;
+  background: #000000;
+  color: #ffffff;
+  outline: none;
+}
+input[type="text"]:hover {
+  border-bottom-width: 1px;
+  border-bottom-color: #ffffff6e;
+  border-bottom-style: solid;
+}
+li:focus-within > input[type="text"] {
+  border-bottom-width: 2px;
+  border-bottom-color: #ffffff;
+}

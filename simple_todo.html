@@ -6,41 +6,8 @@
     <title>Simple TODO</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-      :root {
-        --text-direction: center;
-      }
-      body {
-        background: #000000;
-        color: #ffffff;
-      }
-      .center {
-        text-align: center;
-        align-content: center;
-      }
-      #start {
-        display: grid;
-        grid-template-columns: auto;
-        grid-template-rows: auto;
-      }
-      #main {
-        display: grid;
-        grid-template:
-          "header"
-          "list";
-      }
-      #listContainer {
-        grid-area: "list";
-      }
-      #header {
-        grid-area: "header";
-      }
-      ul {
-        text-align: start;
-        padding-left: 2.5rem;
-        list-style-type: none;
-      }
-    </style>
+    <link rel="stylesheet" href="simple_todo.css" />
+    <script src="simple_todo.js" async defer></script>
   </head>
   <body>
     <div id="start" class="center">
@@ -59,28 +26,16 @@
       <div id="listContainer">
         <h1><code>TODO:</code></h1>
         <ul id="list">
-          <li><input type="checkbox" />something</li>
+          <li id="form">
+            <form id="addNewItem" onsubmit="handleNewItem()">
+              <input type="checkbox" id="checkInput" /><input
+                type="text"
+                id="textInput"
+              />
+            </form>
+          </li>
         </ul>
       </div>
     </div>
-    <script defer>
-      "use strict";
-      window.onload = function init() {
-        const listElement = document.getElementById("list");
-
-        listElement.append(li);
-      };
-      let $list = document.getElementById("list");
-      function createTODOListElement(todo) {
-        if (todo) {
-          const li = document.createElement("li");
-          const check = document.createElement("input");
-          check.type = "checkbox";
-          li.append(check);
-          const text = document.createTextNode("Created from init");
-          li.append(text);
-        }
-      }
-    </script>
   </body>
 </html>
